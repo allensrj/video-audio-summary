@@ -21,6 +21,20 @@ Python scripts prepare the evidence. An Agent reads the transcript, inspects the
 - Resume matching tasks with hash checks, and retain handoff instructions when a stage fails.
 - Validate report references, image paths, and declared review coverage.
 
+## Input formats
+
+The pipeline uses FFmpeg/ffprobe to identify and decode media; it does not restrict local inputs by file extension. Common formats include:
+
+| Type | Common file extensions | Notes |
+| --- | --- | --- |
+| Video | `.mp4`, `.mov`, `.mkv`, `.webm`, `.avi`, `.m4v`, `.flv`, `.wmv`, `.ts` | A decodable video stream enables frame extraction; an audio stream enables speech transcription. |
+| Audio | `.wav`, `.mp3`, `.m4a`, `.aac`, `.flac`, `.ogg`, `.opus`, `.wma`, `.aiff`, `.amr` | Audio is converted to mono 16 kHz PCM WAV internally for local ASR; manual conversion is normally unnecessary. |
+| External subtitles / transcript | `.srt`, `.vtt`, `.json` | Supply with `--transcript`; JSON must contain timestamped `start`, `end`, and `text` segments. See the [data schema](video-audio-summary/references/data-schema.md). |
+
+These are common input formats, not an exhaustive list or a claim that every codec combination has been tested. A container such as MP4 or MKV can hold different codecs. Actual compatibility depends on the installed FFmpeg build, valid media metadata/duration, and whether its streams can be decoded. Renaming a file extension does not convert its format.
+
+Use `media_pipeline.py check --input /absolute/path/file` to inspect the streams and duration first; this checks metadata, while actual decoding is exercised during `prepare`. A video with no audio can still produce a visual-only summary, which the Agent must label accordingly. Corrupt, encrypted, or otherwise undecodable media must be repaired or provided in a decodable form before processing.
+
 ## Requirements
 
 - Python 3.10+.
