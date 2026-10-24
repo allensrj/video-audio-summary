@@ -1,0 +1,2 @@
+# Keep current: site extractors change frequently. Tested with 2026.10.21.
+yt-dlp[default]>=2026.10.21

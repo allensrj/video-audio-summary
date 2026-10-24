@@ -1,0 +1,21 @@
+.venv/
+.model-cache/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local recordings, downloaded media, generated reports, and development notes.
+/video/
+/verification/
+/outputs/
+*.source/
+/计划报告.md
+
+# Local credentials and editor state.
+.env
+.env.*
+!.env.example
+cookies*.txt
+cookies*.json
+.idea/
+.vscode/

@@ -1,0 +1,4 @@
+interface:
+  display_name: "视频与音频总结"
+  short_description: "总结本地视频、音频或 YouTube/Bilibili 链接，输出带时间依据和截图的报告"
+  default_prompt: "使用 $video-audio-summary 总结这段视频、音频或 YouTube/Bilibili 链接，输出有时间依据的中文图文报告。"
