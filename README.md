@@ -171,3 +171,7 @@ python -m unittest discover -s tests -v
 The 18 tests exercise the local pipeline and online adapter with synthetic media and mocked platform responses. Separate real YouTube and Bilibili download/preprocessing checks passed. See [validation notes](docs/VALIDATION.md) for the exact scope; these results do not guarantee every online video will remain accessible.
 
 Implementation references: [runtime](video-audio-summary/references/runtime.md), [data schema](video-audio-summary/references/data-schema.md), [report guide](video-audio-summary/references/report-guide.md), and [report template](video-audio-summary/assets/report-template.md).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

@@ -171,3 +171,7 @@ python -m unittest discover -s tests -v
 18 项测试使用合成媒体和模拟平台响应，覆盖本地流水线与在线适配；另已完成 YouTube、Bilibili 的真实下载与预处理测试。具体范围见[验证记录](docs/VALIDATION.md)，成功样例不代表所有在线链接始终可用。
 
 实现参考：[运行说明](video-audio-summary/references/runtime.md)、[数据约定](video-audio-summary/references/data-schema.md)、[报告指南](video-audio-summary/references/report-guide.md)、[报告模板](video-audio-summary/assets/report-template.md)。
+
+## 许可证
+
+本项目采用 [MIT 许可证](LICENSE)。
